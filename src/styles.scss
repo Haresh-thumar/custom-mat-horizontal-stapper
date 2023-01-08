@@ -1,1 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  margin: 0;
+  font-family: "Lobster Two", cursive;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+/*-- for header --*/
+.mat-step-header {
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px !important;
+}
+
+/*- for inner box background change --*/
+.mat-step-header .mat-step-icon-selected {
+  background: red !important;
+  color: #ffffff;
+}
+
+/*- for outer steps --*/
+.mat-horizontal-stepper-header {
+  height: 33px !important;
+  border: 1px solid silver !important;
+}
+
+/*- for inner box font property change --*/
+.mat-step-icon-content {
+  font-size: 14px !important;
+  font-weight: bold;
+}
+
+/*- for inner box size --*/
+.mat-step-icon {
+  width: 25px !important;
+  height: 25px !important;
+  border-radius: 5px !important;
+}
+
+/*- for outer frame property change when active(seleted) --*/
+.mat-horizontal-stepper-header {
+  &[ng-reflect-selected="true"].mat-step-header {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 0, 0) !important;
+  }
+}
+
+/*- for outer frame property change when deactive(deseleted) --*/
+.mat-horizontal-stepper-header {
+  &[ng-reflect-selected="false"].mat-step-header {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+/*- for inner lable color --*/
+.mat-step-label-selected {
+  color: red !important;
+}
+
+/*-- for step content center --*/
+.mat-content-center {
+  width: 80%;
+  padding-top: 20px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid pink;
+}
+
+/*-- content btn --*/
+.content-button {
+  margin: 15px 0 10px 0 !important;
+}
+
+/*-- for step previous btn --*/
+.mat-step-prev-btn {
+  background-color: rgb(255, 98, 0);
+  color: #fff;
+  margin: 8px !important;
+  padding: 3px 20px 3px 20px !important;
+}
+
+/*-- for step next btn --*/
+.mat-step-next-btn {
+  background-color: green;
+  color: #fff;
+  margin: 8px !important;
+  padding: 3px 20px 3px 20px !important;
+}

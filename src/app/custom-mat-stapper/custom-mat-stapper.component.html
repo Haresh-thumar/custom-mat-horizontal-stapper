@@ -1,0 +1,52 @@
+<mat-horizontal-stepper [linear]="false" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <div class="mat-content-center">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Upload Bank Statements</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div class="content-button">
+          <button mat-button matStepperNext class="mat-step-next-btn">Next</button>
+        </div>
+      </form>
+    </div>
+  </mat-step>
+
+  <mat-step [stepControl]="firstFormGroup">
+    <div class="mat-content-center">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Related Parties Information</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <div class="content-button">
+          <button mat-button matStepperPrevious class="mat-step-prev-btn">Back</button>
+          <button mat-button matStepperNext class="mat-step-next-btn">Next</button>
+        </div>
+      </form>
+    </div>
+  </mat-step>
+
+  <mat-step>
+    <div class="mat-content-center">
+      <ng-template matStepLabel>Sanction Limits</ng-template>
+      You are now done.
+      <div class="content-button">
+        <button mat-button matStepperPrevious class="mat-step-prev-btn">Back</button>
+        <button mat-button matStepperNext class="mat-step-next-btn">Reset</button>
+      </div>
+    </div>
+  </mat-step>
+
+  <mat-step>
+    <div class="mat-content-center">
+      <ng-template matStepLabel>Request Placed</ng-template>
+      You are now done.
+      <div class="content-button">
+        <button mat-button matStepperPrevious class="mat-step-prev-btn">Back</button>
+        <button mat-button (click)="stepper.reset()" class="mat-step-next-btn">Reset</button>
+      </div>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
