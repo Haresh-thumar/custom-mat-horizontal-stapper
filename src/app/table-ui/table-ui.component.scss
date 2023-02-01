@@ -1,0 +1,321 @@
+:root {
+  --whiteColor: #fff;
+  --primaryColor: #fff;
+  --secondaryColor: #00a9a6;
+  --teal: #00a9a6;
+  --teal-hover: #007F7C;
+  --till-rgbcolor: rgb(0, 169, 166);
+  --dividerColor: #dcdcdc;
+  --blackcolor: #444;
+  --darkGreyColor: #888;
+  --greyColor: #a3a3a3;
+  --white: #ffffff;
+  --navy-blue: #04142d;
+  --Blue5-hover: rgba(29, 49, 89, 0.2);
+  --Coral: #ee6047;
+  --Coralrgb: rgba(238, 96, 71, 0.94);
+  --lightcoral: #FDEFED;
+  --yellow: #dcdc5b;
+  --Blue1: #b3bccd;
+  --Blue2: #8ea9c4;
+  --Blue3: #4d6d9b;
+  --Blue4: #1d3159;
+  --Blue4-hover: rgba(29, 49, 89, 0.2);
+  --Blue5: #1e2737;
+  --lightgray: #94A7C3;
+  --body-color: #ECF3FE;
+  --table-header: #f5f5f5;
+  --crp-yellow: #f7be11;
+  --crp-orange: #ff8c00;
+  --crp-green: #107c10;
+  --crp-red: #ff0808;
+  --crp-light-gray: #6f6f6f;
+  --crp-border-color: #dddddd;
+  --crp-till-color: rgb(0, 169, 166);
+  --common-font: Titillium Web;
+}
+
+/********* Filter Section ********/
+
+.flex-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.date-label {
+  text-transform: capitalize;
+  font-family: "Titillium Web", sans-serif;
+  margin-top: -16px;
+  letter-spacing: 0.2px;
+}
+
+.mat-main-select {
+  margin: 10px 0;
+}
+
+.mat-select-input {
+  margin: 0 auto;
+  width: 90%;
+}
+
+::ng-deep .mat-form-field-flex>.mat-form-field-infix {
+  padding: 0.4em 0px !important;
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+  top: -1.5em;
+}
+
+::ng-deep.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.1em) scale(0.75);
+  width: 133.33333%;
+}
+
+::ng-deep.mat-form-field-flex:hover .mat-form-field-outline {
+  opacity: 0.1 !important;
+}
+
+.datepicker-icon {
+  top: -8px;
+  right: -4px;
+  font-size: 17px;
+  color: #000;
+  position: relative;
+}
+
+::ng-deep .mat-pseudo-checkbox {
+  color: #00a9a6;
+}
+
+::ng-deep .mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: #00a9a6;
+}
+
+/********* Table *********/
+
+.table-custom {
+  border: 1px solid #b3bccd;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.table-custom thead tr th {
+  background: #f5f5f5;
+  color: #4d6d9b !important;
+  font-family: "Titillium Web", sans-serif;
+  border: 1px solid #b3bccd;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.table-custom tbody tr td {
+  color: #444;
+  border: 1px solid #b3bccd;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.table-custom tbody tr td b {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.table-custom tbody tr td .checkbox {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.table-custom thead tr th input[type='text']::placeholder {
+  font-weight: 200 !important;
+}
+
+.table-custom thead tr th input[type='text']:focus {
+  outline: none;
+}
+
+.table-custom tbody tr td a {
+  color: #00a9a6;
+  /* font-weight: 600; */
+}
+
+.table-custom tbody tr td a:hover,
+.table-custom tbody tr td a:focus {
+  text-decoration: none;
+}
+
+tr.tr-disabled {
+  background: #f1f1f1 !important;
+  cursor: not-allowed !important;
+  opacity: 0.4 !important;
+}
+
+.table-responsive {
+  width: 100%;
+}
+
+/* request details */
+.request-details-table p {
+  margin: 0px 0 15px 0;
+  color: #4D6D9B;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.reqtab-collapse {
+  vertical-align: middle;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.reqtab-collapse i {
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.text-decorated {
+  text-decoration: underline;
+}
+
+.text-green {
+  color: #107c10 !important;
+}
+
+.pass-validornot {
+  font-size: 12px;
+  font-weight: 400;
+  color: #00a9a6;
+}
+
+.pass-validornot .fa {
+  font-size: 15px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+
+.pass-validornot .fa-check-circle-o {
+  color: var(--crp-green);
+}
+
+.pass-validornot .fa-spinner {
+  color: #00a9a6;
+}
+
+.collapse {
+  display: none;
+}
+
+.collapse.in {
+  display: block;
+}
+
+tr.collapse.in {
+  display: table-row;
+}
+
+tbody.collapse.in {
+  display: table-row-group;
+}
+
+input[type="checkbox"]::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0px !important;
+  background: #fff !important;
+  width: 13px !important;
+  height: 13px !important;
+  border-radius: 3px !important;
+  border: 2px solid #00a9a6 !important;
+}
+
+input[type="checkbox"]:checked:after {
+  width: 5px !important;
+  height: 8px !important;
+  left: 4px !important;
+  top: 2px !important;
+  background-color: transparent !important;
+  border: solid #00a9a6 !important;
+  border-width: 0 2px 2px 0 !important;
+  -webkit-transform: rotate(45deg) !important;
+  -ms-transform: rotate(45deg) !important;
+  transform: rotate(45deg) !important;
+}
+
+input[type="checkbox"][disabled]:after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0px !important;
+  background: #00a9a6 !important;
+  width: 16px !important;
+  height: 16px !important;
+  border: 2px solid #00a9a6 !important;
+  border-radius: 3px !important;
+}
+
+.text-teald {
+  color: #00a9a6 !important;
+}
+
+.text-teald-bold {
+  color: #00a9a6 !important;
+  font-weight: 600;
+}
+
+.text-red,
+.text-danger {
+  color: #ff0808 !important;
+}
+
+.text-yellow {
+  color: #f7be11 !important;
+}
+
+
+/*-------- Pagination ---------*/
+#pagination {
+  display: flex;
+  justify-content: end;
+  margin-right: -15px;
+}
+
+#pagination li {
+  display: inline;
+}
+
+#pagination li a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 3px 7px;
+  color: #000;
+}
+
+/* Active and Hoverable Pagination */
+#pagination li a {
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+#pagination li a.active {
+  background-color: #3787fe;
+  color: #fff;
+}
+
+#pagination li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+/*---- Search Btn ----*/
+.btn-search {
+  background-color: #fff;
+  color: #1d3159;
+  border: 1px solid #1d3159;
+}
+
+.btn-search:hover {
+  color: #fff;
+  background-color: #1d3159;
+}

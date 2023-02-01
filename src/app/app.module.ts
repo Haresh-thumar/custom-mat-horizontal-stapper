@@ -13,12 +13,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CustomMatStapperComponent } from './custom-mat-stapper/custom-mat-stapper.component';
+import { TableUiComponent } from './table-ui/table-ui.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomMatStapperComponent
+    CustomMatStapperComponent,
+    TableUiComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,10 @@ import { CustomMatStapperComponent } from './custom-mat-stapper/custom-mat-stapp
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

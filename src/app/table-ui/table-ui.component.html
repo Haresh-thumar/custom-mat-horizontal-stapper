@@ -1,0 +1,496 @@
+<div style="margin-top: 25px;">
+  <!--******* filter row *******-->
+  <div class="row" style="margin-bottom: -10px;">
+    <!--====== filter column ======-->
+    <div class="col-sm-5">
+      <div class="flex-box custome-datepicker-form" style="margin-bottom: -5px;">
+        <!-- label -->
+        <label for="" class="date-label">Date Range</label>
+        <!-- from month -->
+        <mat-form-field appearance="outline">
+          <mat-label>From Month</mat-label>
+          <input matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1">
+            <i class="fa fa-calendar-o datepicker-icon" matDatepickerToggleIcon></i>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <!-- to -->
+        <span class="date-label">To</span>
+        <!-- to month -->
+        <mat-form-field appearance="outline">
+          <mat-label>To Month</mat-label>
+          <input matInput [matDatepicker]="picker2">
+          <mat-datepicker-toggle matSuffix [for]="picker2">
+            <i class="fa fa-calendar-o datepicker-icon" matDatepickerToggleIcon></i>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <!--- filter column --->
+    <div class="col-sm-3" style="display: flex;align-items: center; margin-bottom: -5px;">
+      <!-- label -->
+      <label for="" class="date-label" style="margin-right: 10px;">Users</label>
+      <!-- select user -->
+      <div class="custom_multiple text-center" style="width: 150px;">
+        <mat-form-field appearance="outline">
+          <mat-label>All Users(5)</mat-label>
+          <mat-select [formControl]="toppings" multiple>
+            <div class="mat-main-select">
+              <input type="text" class="form-control mat-select-input" placeholder="search">
+            </div>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <!--- filter column --->
+    <div class="col-sm-4">
+      <div class="form-group" style="display: flex;justify-content: flex-end;">
+        <!-- search input -->
+        <input type="text" name="Search" id="Search" class="form-control" placeholder="Search..." style="width:260px"
+          autocomplete="off">
+        <!-- search button -->
+        <button class="btn btn-search" style="padding: 3px 12px;margin-left: 15px;"><i
+            class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="table-responsive request-details-table">
+      <!--********************** Description Note **********************-->
+      <p>Analytics on Insights will be run based on the statements considered for analysis in the latest request placed.
+      </p>
+
+      <!--********************** Main Table **********************-->
+      <table class="table table-custom table-bordered">
+
+        <!--******** Table Header ********-->
+        <thead>
+          <tr>
+            <th>requested on</th>
+            <th style="width: 300px;">name</th>
+            <th>period of analysis</th>
+            <th>bank name (A/C NO.)</th>
+            <th>valid records</th>
+            <th>request status</th>
+            <th>requested by</th>
+            <th colspan="2" style="width: 110px;">Action
+              <a href="#">
+                <i class="fa fa-exclamation-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top"
+                  data-html="true" title="Re-Analyse - To change the statements which are covered in “Statements considered for analysis” the user can select
+                  one or more statements from the checkbox and click on “Re-Analyse” to regenerate the output and analysis. The user can select
+                  more than one statement of that particular order and get a consolidated analysis and output sheet of multiple bank statements.
+                  <br> Edit (   <i class='fa fa-pencil-square-o'></i>  ) - Users can click on “Edit” to modify the Period of Analysis, Related
+                  party details or Sanction limits and get a revised analysis and output report."></i></a>
+            </th>
+          </tr>
+        </thead>
+
+        <!--******** Table Body ********-->
+        <tbody>
+          <!--============== Table Row-1 ==============-->
+          <tr style="background-color: #ddd;">
+            <!-----td-1----->
+            <td>
+              <a href="#" data-toggle="collapse" data-target=".demo1" class="collapsed reqtab-collapse"
+                aria-expanded="false"> <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+              </a>
+              <span>15/10/22</span>
+            </td>
+            <!-----td-2----->
+            <td>ABC ACADEMY PRIVATE LIMITED</td>
+            <!-----td-3----->
+            <td>Apr, 22 - Sep, 22</td>
+            <!-----td-4----->
+            <td></td>
+            <!-----td-5----->
+            <td>
+              <a href="#" data-toggle="modal" data-target="#validrecords" class="text-decorated">45</a> &nbsp;
+              <i class="fa fa-exclamation-circle" aria-hidden="true" data-toggle="tooltip" data-placement="bottom"
+                title="To view the invalid document please click on the number of valid records."></i>
+            </td>
+            <!-----td-6----->
+            <td class="text-green">Completed</td>
+            <!-----td-7----->
+            <td>ishirshah@corpository.com</td>
+            <!-----td-8----->
+            <td class="text-center pass-validornot">
+              <a href="#" data-toggle="modal" data-target="#Re-analyse-modal">Re-Analyse</a>
+            </td>
+            <!-----td-9----->
+            <td style="width: 10px;" class="text-center">
+              <a href="screen2.html">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+
+          <!--============== Table Row-2 ==============-->
+          <tr class="demo1 collapse" aria-expanded="false" style="height: 0px;">
+            <!-----td-1----->
+            <td>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="" id="progress1" value="1" tabindex="1" onclick="ckChange(this)">
+                </label>
+              </div>
+            </td>
+            <!-----td-2----->
+            <td><b>Statements considered for Analysis</b></td>
+            <!-----td-3----->
+            <td></td>
+            <!-----td-4----->
+            <td></td>
+            <!-----td-5----->
+            <td></td>
+            <!-----td-6----->
+            <td></td>
+            <!-----td-7----->
+            <td></td>
+            <!-----td-8----->
+            <td class="text-center" colspan="2">
+              <a href="#"><i class="fa fa-download" aria-hidden="true"></i>
+                <i class="fa fa-spinner fa-spin" aria-hidden="true" style="display: none;"></i>
+                Consolidated</a>
+            </td>
+          </tr>
+
+          <!--============== Table Row-3 ==============-->
+          <tr class="demo1 collapse" aria-expanded="false" style="height: 0px;">
+            <!-----td-1----->
+            <td>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="" id="progress1" value="1" tabindex="1" onclick="ckChange(this)">
+                </label>
+              </div>
+            </td>
+            <!-----td-2----->
+            <td>ABC ACADEMY PRIVATE LIMITED</td>
+            <!-----td-3----->
+            <td></td>
+            <!-----td-4----->
+            <td>ICICI (6589)</td>
+            <!-----td-5----->
+            <td></td>
+            <!-----td-6----->
+            <td class="text-green">Completed</td>
+            <!-----td-7----->
+            <td></td>
+            <!-----td-8----->
+            <td class="text-center" colspan="2">
+              <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+            </td>
+          </tr>
+
+          <!--============== Table Row-4 ==============-->
+          <tr class="demo1 collapse" aria-expanded="false" style="height: 0px;">
+            <!-----td-1----->
+            <td>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="" id="progress1" value="1" tabindex="1" onclick="ckChange(this)">
+                </label>
+              </div>
+            </td>
+            <!-----td-2----->
+            <td>Nipam Shah
+              <i class="fa fa-caret-up" aria-hidden="true" style="color: #008000; float: right;font-size: 20px;"></i>
+            </td>
+            <!-----td-3----->
+            <td></td>
+            <!-----td-4----->
+            <td>ICICI (2365)</td>
+            <!-----td-5----->
+            <td>10</td>
+            <!-----td-6----->
+            <td class="text-green">Completed</td>
+            <!-----td-7----->
+            <td></td>
+            <!-----td-8----->
+            <td class="text-center" colspan="2">
+              <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+            </td>
+          </tr>
+
+          <!--============== Table Row-5 ==============-->
+          <tr class="demo1 collapse" aria-expanded="false" style="height: 0px;">
+            <!-----td-1----->
+            <td>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="" id="progress1" value="1" tabindex="1" onclick="ckChange(this)">
+                </label>
+              </div>
+            </td>
+            <!-----td-2---->
+            <td><b>Statements considered for Analysis</b></td>
+            <!-----td-3----->
+            <td></td>
+            <!-----td-4----->
+            <td></td>
+            <!-----td-5----->
+            <td></td>
+            <!-----td-6----->
+            <td></td>
+            <!-----td-7----->
+            <td></td>
+            <!-----td-8----->
+            <td class="text-center" colspan="2">
+              <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+            </td>
+          </tr>
+
+          <!--============== Table Row-6 ==============-->
+          <tr class="demo1 collapse" aria-expanded="false" style="height: 0px;">
+            <!-----td-1----->
+            <td>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="" id="progress1" value="1" tabindex="1" onclick="ckChange(this)">
+                </label>
+              </div>
+            </td>
+            <!-----td-2----->
+            <td>Aniket Shah</td>
+            <!-----td-3----->
+            <td></td>
+            <!-----td-4----->
+            <td>HDFC (2336)</td>
+            <!-----td-5----->
+            <td>8</td>
+            <!-----td-6----->
+            <td class="text-green">Completed</td>
+            <!-----td-7----->
+            <td></td>
+            <!-----td-8----->
+            <td class="text-center" colspan="2">
+              <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+            </td>
+          </tr>
+
+          <!--============== Table Row-7 ==============-->
+          <tr class="demo1 collapse" aria-expanded="false" style="height: 0px;">
+            <!-----td-1----->
+            <td>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="" id="progress1" value="1" tabindex="1" onclick="ckChange(this)">
+                </label>
+              </div>
+            </td>
+            <!-----td-2----->
+            <td>ABC ACADEMY PRIVATE LIMITED
+              <i class="fa fa-caret-down" aria-hidden="true" style="color: red;float:right;font-size: 20px;"></i>
+            </td>
+            <!-----td-3----->
+            <td></td>
+            <!-----td-4----->
+            <td>KMBL (9865)</td>
+            <!-----td-5----->
+            <td>8</td>
+            <!-----td-6----->
+            <td class="text-green">Completed</td>
+            <!-----td-7----->
+            <td></td>
+            <!-----td-8----->
+            <td class="text-center" colspan="2">
+              <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+            </td>
+          </tr>
+
+          <!--============== Table Row-8 ==============-->
+          <tr class="demo1 collapse" aria-expanded="false" style="height: 0px;">
+            <!-----td-1----->
+            <td>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="" id="progress1" value="1" tabindex="1" onclick="ckChange(this)">
+                </label>
+              </div>
+            </td>
+            <!-----td-2----->
+            <td>
+              <span data-toggle="tooltip" title="SAI - ASHISH LOGISTICS AND MANAGEMENT SOLUTIONS PRIVATE LIMITED"
+                data-placement="right">SAI - ASHISH LOGISTICS AND MANAGEME...</span>
+            </td>
+            <!-----td-3----->
+            <td>Apr, 22 - Sep, 22</td>
+            <!-----td-4----->
+            <td>
+              <span data-toggle="tooltip" title="Credit agricole corporate and investment bank (6598)"
+                data-placement="bottom">Credit Agricole Corporate &...</span>
+            </td>
+            <!-----td-5----->
+            <td>7</td>
+            <!-----td-6----->
+            <td class="text-green">Completed</td>
+            <!-----td-7----->
+            <td></td>
+            <!-----td-8----->
+            <td class="text-center" colspan="2">
+              <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+            </td>
+          </tr>
+
+          <!------------------ second expand ------------------>
+          <tr>
+            <!-----td-1----->
+            <td>
+              <a href="#" data-toggle="collapse" data-target=".demo2" class="collapsed reqtab-collapse"
+                aria-expanded="false"><i class="fa fa-plus-square-o" aria-hidden="true"></i>
+              </a><span>15/10/22</span>
+            </td>
+            <!-----td-2----->
+            <td>ABC ACADEMY PRIVATE LIMITED</td>
+            <!-----td-3----->
+            <td>Apr, 22 - Sep, 22</td>
+            <!-----td-4----->
+            <td></td>
+            <!-----td-5----->
+            <td class="text-teald">
+              <a href="#" data-toggle="modal" data-target="#validrecordssmall" class="text-decorated">12</a>
+            </td>
+            <!-----td-6----->
+            <td class="text-green">Completed</td>
+            <!-----td-7----->
+            <td>mihir.baliya@corpository.com</td>
+            <!-----td-8----->
+            <td class="text-center pass-validornot text-teald">
+              <a href="#">Re-Analyse</a>
+            </td>
+            <!-----td-9----->
+            <td style="width: 10px;" class="text-center">
+              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+
+          <!------------------ third expand ------------------>
+          <tr>
+            <!-----td-1----->
+            <td>
+              <a href="#" data-toggle="collapse" data-target=".second-tab-coll" class="collapsed reqtab-collapse"
+                aria-expanded="false"><i class="fa fa-plus-square-o" aria-hidden="true" style="visibility: hidden;"></i>
+              </a><span>15/10/22</span>
+            </td>
+            <!-----td-1=2----->
+            <td>ABC ACADEMY PRIVATE LIMITED</td>
+            <!-----td-3----->
+            <td>Apr, 22 - Sep, 22</td>
+            <!-----td-4----->
+            <td></td>
+            <!-----td-5----->
+            <td class="text-teald">
+              <a href="#" class="text-decorated" class="text-decorated" class="text-decorated">12</a>
+            </td>
+            <!-----td-6----->
+            <td class="text-red">Error Identified</td>
+            <!-----td-7----->
+            <td>mihir.baliya@corpository.com</td>
+            <!-----td-8----->
+            <td class="text-center pass-validornot text-teald text-center" colspan="2">
+              <a href="#" data-toggle="modal" data-target="#errormsg_one">View Error</a>
+            </td>
+          </tr>
+
+          <!------------------ fourth expand ------------------>
+          <tr>
+            <!-----td-1----->
+            <td>
+              <a href="#" data-toggle="collapse" data-target=".second-tab-coll-1" class="collapsed reqtab-collapse"
+                aria-expanded="false">
+                <i class="fa fa-plus-square-o" style="visibility: hidden;" aria-hidden="true"></i>
+              </a>
+              <span>15/10/22</span>
+            </td>
+            <!-----td-2----->
+            <td>ABC ACADEMY PRIVATE LIMITED</td>
+            <!-----td-3----->
+            <td>Apr, 22 - Sep, 22</td>
+            <!-----td-4----->
+            <td></td>
+            <!-----td-5----->
+            <td class="text-teald"><a href="#" class="text-decorated">12</a></td>
+            <!-----td-6----->
+            <td class="text-red">Error Identified</td>
+            <!-----td-7----->
+            <td>mihir.baliya@corpository.com</td>
+            <!-----td-8----->
+            <td class="text-center pass-validornot text-teald text-center" colspan="2">
+              <a href="#" data-toggle="modal" data-target="#errormsg_two">View Error</a>
+            </td>
+          </tr>
+
+          <!------------------ fifth expand ------------------>
+          <tr>
+            <!-----td-1----->
+            <td>
+              <a href="#" data-toggle="collapse" data-target=".third-tab-coll" class="collapsed reqtab-collapse"
+                aria-expanded="false">
+                <i class="fa fa-plus-square-o" aria-hidden="true" style="visibility: hidden;"></i>
+              </a>
+              <span>15/10/22</span>
+            </td>
+            <!-----td-2----->
+            <td>ABC ACADEMY PRIVATE LIMITED</td>
+            <!-----td-3----->
+            <td>Apr, 22 - Sep, 22</td>
+            <!-----td-4----->
+            <td></td>
+            <!-----td-5----->
+            <td class="text-teald"><i class="fa fa-spin fa-spinner"></i></td>
+            <!-----td-6----->
+            <td class="text-yellow">Processing</td>
+            <!-----td-7----->
+            <td>mihir.baliya@corpository.com</td>
+            <!-----td-8----->
+            <td class="text-center pass-validornot text-teald text-center" colspan="2">
+              <!-- <a href="#" data-toggle="modal" data-target="#errormsg_one">View Error</a> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--************ Edit Note ************-->
+      <div class="tab-bottom-block">
+        <!------ Note Text ------>
+        <div class="col-sm-12">
+          <p style="color: #444; margin-left: -15px;">
+            <i class="fa fa-edit text-teald" style="font-size: 16px;vertical-align: middle;"></i>
+            - Edit functionality will be active upto 15 days from placing the request.
+          </p>
+        </div>
+
+        <!------ Pagination ------>
+        <div class="col-sm-12">
+          <div>
+            <!--Active and Hoverable Pagination-->
+            <ul id="pagination">
+              <li><a href="#">«</a></li>
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#" class="active">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">6</a></li>
+              <li><a href="#">7</a></li>
+              <li><a href="#">Next</a></li>
+              <li><a href="#">»</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
